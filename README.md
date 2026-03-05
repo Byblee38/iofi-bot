@@ -46,20 +46,20 @@ The bot will automatically loop through the playlist.
 
 ```
 iofi-bot/
-├─ .env           # konfigurasi token
-├─ index.js       # source utama
+├─ .env           # token configuration
+├─ index.js       # main source file
 ├─ package.json
-├─ songs/         # simpan MP3 di sini
-└─ README.md      # dokumentasi
+├─ songs/         # store MP3 files here
+└─ README.md      # documentation
 ```
 
 ---
 ### 🛠️ Features
 
-- Playback MP3 lokal
-- Loop otomatis 24/7
-- Kontrol via chat
-- Penanganan error sederhana
+- Local MP3 playback
+- Automatic 24/7 looping
+- Chat-based controls
+- Simple error handling
 
 ---
 ## 📦 Main Dependencies
@@ -71,9 +71,9 @@ iofi-bot/
 ---
 ## 🔄 Development
 
-- Tambahkan lebih banyak perintah
-- Integrasi playlist online
-- Fitur auto-disconnect pada channel kosong
+- Add more commands
+- Online playlist integration
+- Auto-disconnect feature when channel is empty
 
 ---
 ## 📜 License
