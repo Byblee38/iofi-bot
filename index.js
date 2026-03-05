@@ -28,7 +28,8 @@ let connection = null;
 
 function playSong() {
   const songPath = path.join(songsDir, songs[currentSong]);
-  console.log(`🎵 Playing: ${songs[currentSong]}`);
+  // log current song for visibility
+  console.log(`Playing: ${songs[currentSong]}`);
 
   const resource = createAudioResource(songPath);
   player.play(resource);
@@ -37,7 +38,6 @@ function playSong() {
 }
 
 player.on(AudioPlayerStatus.Idle, () => {
-  console.log("⏭ Song ended, playing next...");
   playSong();
 });
 
@@ -47,8 +47,8 @@ player.on("error", (err) => {
 });
 
 client.once("ready", () => {
-  console.log(`✅ ${client.user.tag} is ready!`);
-  console.log("Type !join in Discord to start playing");
+  console.log(`Bot logged in as ${client.user.tag}`);
+  console.log("Use !join in Discord to start playback");
 });
 
 client.on("messageCreate", async (msg) => {
@@ -65,11 +65,11 @@ client.on("messageCreate", async (msg) => {
         adapterCreator: msg.guild.voiceAdapterCreator,
       });
 
-      console.log("🔌 Connecting...");
+      // connecting to voice channel
 
       // Wait for ready status via event
       connection.on(VoiceConnectionStatus.Ready, () => {
-        console.log("✅ Connected!");
+        console.log("Connected to voice channel");
         connection.subscribe(player);
         currentSong = 0;
         playSong();
